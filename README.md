@@ -8,8 +8,8 @@ en utilisant des services, des déploiements et des volumes persistants.
 Assurez-vous d'avoir Minikube, Docker et kubectl installés.
 1. Installer Docker: Kubernetes utilise Docker pour gérer les conteneurs.
   * Ubuntu
-    * sudo apt-get update
-    * sudo apt-get install docker.io
+    * `sudo apt-get update`
+    * `sudo apt-get install docker.io`
   * MacOS
     * `brew install docker && docker --version`
   * Windows
@@ -20,11 +20,11 @@ Assurez-vous d'avoir Minikube, Docker et kubectl installés.
     * `docker --version`
 2. Installer kubectl: C'est l'outil de ligne de commande pour interagir avec le cluster Kubernetes.
   * Ubuntu
-    * sudo apt-get update && sudo apt-get install -y apt-transport-https
-    * curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - echo "deb https://apt.kubernetes.io/
-    * kubernetes-xenial main" | sudo tee -a /etc/apt/sourc
-    * sudo apt-get update
-    * sudo apt-get install -y kubectl
+    * `sudo apt-get update && sudo apt-get install -y apt-transport-https`
+    * `curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - echo "deb https://apt.kubernetes.io/`
+    * `kubernetes-xenial main" | sudo tee -a /etc/apt/sourc`
+    * `sudo apt-get update`
+    * `sudo apt-get install -y kubectl`
   * MacOS
     * `brew install kubectl && kubectl version --client`
   * Windows
@@ -40,8 +40,8 @@ Assurez-vous d'avoir Minikube, Docker et kubectl installés.
     * `kubectl version --client`
 3. Installer Minikube: C'est un outil qui permet de créer un cluster Kubernetes localement.
   * Ubuntu
-    * curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux
-    * sudo mv minikube /usr/local/bin/
+    * `curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux`
+    * `sudo mv minikube /usr/local/bin/`
   * MacOS
     * `brew install minikube && minikube version`
   * Windows
