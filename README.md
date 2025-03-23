@@ -7,26 +7,55 @@ en utilisant des services, des déploiements et des volumes persistants.
 ### Étape 1: Prérequis
 Assurez-vous d'avoir Minikube, Docker et kubectl installés.
 1. Installer Docker: Kubernetes utilise Docker pour gérer les conteneurs.
-    * Ubuntu
-      * sudo apt-get update
-      * sudo apt-get install docker.io
-    * MacOS
-      * `brew install docker && docker --version`
+  * Ubuntu
+    * sudo apt-get update
+    * sudo apt-get install docker.io
+  * MacOS
+    * `brew install docker && docker --version`
+  * Windows
+    * Télécharger et installer Docker Desktop depuis le site officiel
+    * https://www.docker.com/products/docker-desktop/
+
+    * Après l'installation, vérifiez que Docker fonctionne en exécutant:
+    * `docker --version`
 2. Installer kubectl: C'est l'outil de ligne de commande pour interagir avec le cluster Kubernetes.
-    * Ubuntu
-      * sudo apt-get update && sudo apt-get install -y apt-transport-https
-      * curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - echo "deb https://apt.kubernetes.io/
-      * kubernetes-xenial main" | sudo tee -a /etc/apt/sourc
-      * sudo apt-get update
-      * sudo apt-get install -y kubectl
-    * MacOS
-      * `brew install kubectl && kubectl version --client`
+  * Ubuntu
+    * sudo apt-get update && sudo apt-get install -y apt-transport-https
+    * curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - echo "deb https://apt.kubernetes.io/
+    * kubernetes-xenial main" | sudo tee -a /etc/apt/sourc
+    * sudo apt-get update
+    * sudo apt-get install -y kubectl
+  * MacOS
+    * `brew install kubectl && kubectl version --client`
+  * Windows
+    * Télécharger kubectl
+    * `curl -LO https://dl.k8s.io/release/v1.28.0/bin/windows/amd64/kubectl.exe`
+
+    * Ajouter kubectl à votre PATH
+    * Déplacez le fichier kubectl.exe dans un dossier de votre PATH, par exemple:
+    * C:\Windows\System32\
+    * Ou créez un dossier spécifique et ajoutez-le au PATH
+
+    * Vérifiez l'installation
+    * `kubectl version --client`
 3. Installer Minikube: C'est un outil qui permet de créer un cluster Kubernetes localement.
-    * Ubuntu
-      * curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux
-      * sudo mv minikube /usr/local/bin/
-    * MacOS
-      * `brew install minikube && minikube version`
+  * Ubuntu
+    * curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux
+    * sudo mv minikube /usr/local/bin/
+  * MacOS
+    * `brew install minikube && minikube version`
+  * Windows
+    * Télécharger l'exécutable Minikube
+    * `curl -Lo minikube.exe https://storage.googleapis.com/minikube/releases/latest/minikube-windows-amd64.exe`
+
+    * Déplacer l'exécutable dans un dossier de votre PATH
+    * Par exemple, placez-le dans le même dossier que kubectl ou dans C:\Windows\System32\
+
+    * Vérifier l'installation
+    * `minikube version`
+4. Démarer le cluster Minikube 
+  * `minikube start`
+  * `kubectl cluster-info`
 
 ### Étape 2: Déployer une base de données
 
@@ -57,8 +86,6 @@ Assurez-vous d'avoir Minikube, Docker et kubectl installés.
                 ports:
                 - containerPort: 3306
 
-* `minikube start`
-* `kubectl cluster-info`
 * `kubectl apply -f mysql-deployment.yaml`
 
 2. Service MySQL:
