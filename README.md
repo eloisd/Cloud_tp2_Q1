@@ -1,4 +1,5 @@
 # Cloud_tp2_Q1
+
 ## Question I
 Dans ce projet, vous allez déployer une application web à deux niveaux avec une base de données et un frontend,
 en utilisant des services, des déploiements et des volumes persistants.
@@ -6,11 +7,14 @@ en utilisant des services, des déploiements et des volumes persistants.
 ### Étape 1: Prérequis
 Assurez-vous d'avoir Minikube, Docker et kubectl installés.
 1. Installer Docker: Kubernetes utilise Docker pour gérer les conteneurs.
-    * `brew install docker && docker --version`
+    * MacOS
+      * `brew install docker && docker --version`
 2. Installer kubectl: C'est l'outil de ligne de commande pour interagir avec le cluster Kubernetes.
-    * `brew install kubectl && kubectl version --client`
+    * MacOS
+      * `brew install kubectl && kubectl version --client`
 3. Installer Minikube: C'est un outil qui permet de créer un cluster Kubernetes localement.
-    * `brew install minikube && minikube version`
+    * MacOS
+      * `brew install minikube && minikube version`
 
 ### Étape 2: Déployer une base de données
 
