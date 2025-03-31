@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-frontend
+  labels:
+    app: todo
+    tier: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: todo
+        tier: frontend
+    spec:
+      containers:
+      - name: todo-frontend
+        image: todo-frontend:latest
+        imagePullPolicy: Never  # Pour les images locales
+        ports:
+        - containerPort: 80
+        env:
+        - name: REACT_APP_API_URL
+          value: http://todo-api-service:3001/api
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
